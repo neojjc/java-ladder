@@ -249,16 +249,30 @@ pobi  honux crong   jk
 </code></pre>
 
 ### Step2 리뷰사항
-* [x] [fix#1][Ladder.java] 객체지향 생활체조 7번, 8번 원칙을 지킬 것
+* [x] [fix#01][Ladder.java] 객체지향 생활체조 7번, 8번 원칙을 지킬 것
     * 규칙 7 : 3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다
     * 규칙 8 : 일급 콜렉션을 쓴다
-* [x] [fix#2][Ladder.java] Ladder에서 하나의 Row를 의미하는 Row까지 생성하고 있음. 이 부분을 해당 책임을 가진 객체에게 위임하고 결과를 반환 받도록 수정
-* [x] [fix#3][Ladder.java] 핵심 로직을 가지는 도메인 객체와 화면과 관련된 View를 변경할 것 (현재 기준 View에 대한 요구사항이 변경 되었을 때 도메인이 변경되어야 함)
-* [x] [fix#4][Point.java] if문의 조건을 한 줄로 표현 할 것 
-* [x] [fix#5][Point.java] Primitive type(기본 타입)은 Default 값을 가짐. 즉 항상 값이 있는 상태이므로 null이 될 수 없음 (boolean은 기본 값으로 false를 가짐) 
-* [x] [fix#6][Row.java] 존재하지 않는 값을 표현히가 위해 null을 사용하기보다, 존재할 지 안 할지 모르는 값을 표현할 수 있는 Optional을 사용할 것
-* [x] [fix#7][Ladder.java] RANDOM 을 클래스 변수로 선언한 이유가 있을 지 
-* [x] [fix#8][Ladder.java] Ladder 객체를 생성하는 순간, 사다리 판이 만들어질 수 있도록 수정 (불필요한 make 호출을 없앨 것)
-* [x] [fix#9][JoinersConvertorTest.java] @MethodSource에 대해서 학습할 것
+* [x] [fix#02][Ladder.java] Ladder에서 하나의 Row를 의미하는 Row까지 생성하고 있음. 이 부분을 해당 책임을 가진 객체에게 위임하고 결과를 반환 받도록 수정
+* [x] [fix#03][Ladder.java] 핵심 로직을 가지는 도메인 객체와 화면과 관련된 View를 변경할 것 (현재 기준 View에 대한 요구사항이 변경 되었을 때 도메인이 변경되어야 함)
+* [x] [fix#04][Point.java] if문의 조건을 한 줄로 표현 할 것 
+* [x] [fix#05][Point.java] Primitive type(기본 타입)은 Default 값을 가짐. 즉 항상 값이 있는 상태이므로 null이 될 수 없음 (boolean은 기본 값으로 false를 가짐) 
+* [x] [fix#06][Row.java] 존재하지 않는 값을 표현히가 위해 null을 사용하기보다, 존재할 지 안 할지 모르는 값을 표현할 수 있는 Optional을 사용할 것
+* [x] [fix#07][Ladder.java] RANDOM 을 클래스 변수로 선언한 이유가 있을 지 
+* [x] [fix#08][Ladder.java] Ladder 객체를 생성하는 순간, 사다리 판이 만들어질 수 있도록 수정 (불필요한 make 호출을 없앨 것)
+* [x] [fix#09][JoinersConvertorTest.java] @MethodSource에 대해서 학습할 것
     * https://www.baeldung.com/parameterized-tests-junit-5
-   
+* [ ] [fix#10][LadderGame.java] height는 꼭 필요한 변수인가
+* [ ] [fix#11][Ladder.java] 파라미터로 String 타입의 input을 받아 내부에서 Joiners객체를 생성하는 것과 파라미터로 Joiners 객체를 바로 받는 것을 비교 해보시고 의견을 공유 할 것
+* [ ] [fix#12][Ladder.java] Rows를 통해 사다리 높이를 알 수 있을 것 같은데, height 변수가 꼭 필요한가 
+* [ ] [fix#13][Joiners.java] 참여자의 수를 조회하는 메소드에 맞게 메소드 명을 변경할 것 
+* [ ] [fix#14][Joiners.java] 개인적인 궁금함, 현재 게임 참여자를 만드는 책임이 JoinersConvertor에 있는데, Joiners에서 책임을 가지게 할 수는 없었을까, 현재 Joiners 객체가 빈약한 도메인 모델임
+    * 빈약한 모델 : 비즈니스적인 내용을 갖고 있지 않은 소위 말하는 getter/setter 만 있는 객체 (Anti-patterns)  
+* [ ] [fix#15][Ladder.java] make() 메소드명 변경 (무엇을 만드는지도 알려주면 좋을 것) 
+* [ ] [fix#16][Ladder.java] randomRows, randomCols 여러 변수를 같은 라인에 선언하는 경우, SonarLint에서는 코드 읽기가 어렵다며 별도의 라인에 선언하라고 경고해 줌 
+* [ ] [fix#17][Ladder.java] for문이 돌면서 count 메소드를 매번 호출하고 있음 
+* [ ] [fix#18][Ladder.java] 재 사용 되기 쉬운 Random 객체 같은 경우에는 메소드가 호출될 때 마다 객체를 생성하기보다, 한 개의 Random 객체를 만들어두고 재사용 하게 할  
+* [ ] [fix#19][Ladder.java] rows.get().draw()에서 객체의 상태값을 묻지 말고(get), 어떤 행위를 하도록 메세지를 보낼  
+* [ ] [fix#20][Row.java] 하나의 Row를 의미하는 Row 클래스에서 rowNumber가 필요한지 궁금, 그리고 columnSize도 Point의 개수로 알 수 있을 것 같은데 제거할 것 
+* [ ] [fix#21][Rows.java] count() 기능에 맞게 메소드 명을 변경 할 것 
+* [ ] [fix#22][Row.java] .filter(p -> p.match(x,y)) 와 같이 변경할 수 있음  
+
